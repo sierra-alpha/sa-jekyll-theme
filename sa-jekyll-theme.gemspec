@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|collections|_data|_layouts|_includes|_sass|LICENSE|README|_config\.yml|index\.html)!i) }
+  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|collections|_data|_layouts|_includes|_sass|LICENSE|README|_config\.yml|index)!i) }
 
   spec.add_runtime_dependency "jekyll", "~> 4.3"
 end
