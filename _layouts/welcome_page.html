@@ -7,7 +7,11 @@ layout: default
 
     <h1>{{ content }}</h1>
     {% assign delay = 0 | minus: images.size | divided_by: 2 %}
-    {% assign delay_plus = 60 | divided_by: images.size %}
+    {% assign safe_images_size = images.size %}
+    {% if images.size == 0 %}
+    {% assign safe_images_size = 1 %}
+    {% endif %}
+    {% assign delay_plus = 60 | divided_by: safe_images_size %}
     {% for image in images %}
     <figure style="background-image: url('{{ image.path | replace_first: "_", "/" }}'); animation-delay: {{ delay }}s"></figure>
     {% assign delay = delay | plus: delay_plus %}
